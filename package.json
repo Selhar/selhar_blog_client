@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "selhar-blog",
+  "description": "Personal blog from someone called Selhar.",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
