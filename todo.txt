@@ -1,5 +1,0 @@
-[] - update icon, favicon and manifest.json
-[] - review service worker behavior
-[] - read about cypress, apply testing for the main menu
-[] - contribute to css interpolation
-[] - improve color palette

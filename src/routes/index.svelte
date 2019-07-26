@@ -14,7 +14,7 @@
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Blog home</title>
 </svelte:head>
 
 <h1>render</h1>

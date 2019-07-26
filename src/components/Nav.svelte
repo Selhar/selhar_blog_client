@@ -1,10 +1,12 @@
 <script>
-  export let segment;
+  export let path;
+  import { primary, secondary } from "../styleguide/colors.js";
+  import data from "../mock.js";
 </script>
 
 <style>
   nav {
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--secondary);
     font-weight: 300;
     padding: 0 1em;
   }
@@ -36,7 +38,7 @@
     content: "";
     width: calc(100% - 1em);
     height: 2px;
-    background-color: rgb(255, 62, 0);
+    background-color: #52b3d9;
     display: block;
     bottom: -1px;
   }
@@ -48,24 +50,17 @@
   }
 </style>
 
-<nav>
-  <ul>
-    <li>
-      <a class={segment === undefined ? 'selected' : ''} href=".">home</a>
-    </li>
-    <li>
-      <a class={segment === 'about' ? 'selected' : ''} href="about">about</a>
-    </li>
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <li>
-      <a
-        rel="prefetch"
-        class={segment === 'blog' ? 'selected' : ''}
-        href="blog">
-        blog
-      </a>
-    </li>
-  </ul>
+<nav style="--secondary:{secondary}; --primary:{primary}">
+  {#each data.menu as menu}
+    <ul>
+      <li>
+        <a
+          rel="prefetch"
+          class={path === menu.url ? 'selected' : ''}
+          href={menu.url}>
+          {menu.portuguese.title}
+        </a>
+      </li>
+    </ul>
+  {/each}
 </nav>

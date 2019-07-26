@@ -1,6 +1,8 @@
 <script>
   import Nav from "../components/Nav.svelte";
-  export let segment;
+  import { stores } from "@sapper/app";
+  const { page } = stores();
+  let path = $page.path;
 </script>
 
 <style>
@@ -13,7 +15,7 @@
   }
 </style>
 
-<Nav {segment} />
+<Nav {path} />
 
 <main>
   <slot />
